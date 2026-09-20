@@ -147,15 +147,13 @@ local default_config = {
 		completion_timeout = 5000, -- Timeout in ms for completion requests
 		max_diff_history_tokens = 512, -- Max tokens for diff history (0 = no limit)
 		completion_path = "/v1/completions", -- API endpoint path
-		-- fim_tokens is optional. Omit (the default) to use OpenAI prompt+suffix
-		-- format (e.g. DeepSeek). Set it to opt into tokenized FIM:
-		--   fim_tokens = {
-		--     prefix = "<|fim_prefix|>",
-		--     suffix = "<|fim_suffix|>",
-		--     middle = "<|fim_middle|>",
-		--     repo_name = "<|repo_name|>", -- optional; auto-detected for Qwen
-		--     file_sep = "<|file_sep|>",   -- optional; auto-detected for Qwen
-		--   }
+		fim_tokens = { -- Optional FIM token configuration
+			prefix = "",
+			suffix = "",
+			middle = "",
+			repo_name = "", -- optional; auto-detected for Qwen
+			file_sep = "",   -- optional; auto-detected for Qwen
+		},
 		privacy_mode = true, -- Don't send telemetry to provider
 	},
 
